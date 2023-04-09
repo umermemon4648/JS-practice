@@ -190,6 +190,7 @@ In JavaScript, callbacks are functions that are passed as arguments to other fun
 
       
    -> **Synchronous callback example:**
+   -> *Separating Even and Odd element from an Array using Callback:*
 
 
 ```javascript
@@ -219,4 +220,39 @@ function evenFunc(a){
 separateEvenOdd(arr, oddFunc, "Odd Array Element")
 separateEvenOdd(arr, evenFunc, "Even Array Element")
 
+```
+
+  -> **Asynchronous callback example:**
+   -> *Fetching game data after 4s*
+
+
+```javascript
+let gamelist = []
+let games = {}
+const fetchData = (displayData)=>{
+    setTimeout(() => {
+        gamelist.push(
+        {
+            name: "Gata V",
+            id: 1,
+        },
+
+        {
+            name: "call of duty modern warfare 2",
+            id: 1,
+        },
+        {
+            name: "Granny: Chapter Two",
+            id: 3,
+        },
+
+        )
+        displayData(gamelist)
+    }, 4000);
+}
+const displayData = (data) => {
+    console.log(data)
+}
+
+fetchData(displayData)
 ```
