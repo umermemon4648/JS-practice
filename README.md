@@ -182,3 +182,41 @@ getCart().then((cart)=> {
     console.log("error: ", error)
 });;
 ```
+
+
+  ### What is Callback
+In JavaScript, callbacks are functions that are passed as arguments to other functions and executed when the main function completes. Callbacks can be used to implement both synchronous and asynchronous code.
+
+
+      
+   -> **Synchronous callback example:**
+
+
+```javascript
+let arr = [1,2,3,4,5,6,7,8,9,10]
+function separateEvenOdd(arr, callBackFun, arrayName){
+    const newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (callBackFun(arr[i]) =='') {
+            continue
+        }
+        else{
+            newArr.push(callBackFun(arr[i]))
+
+        }
+    }
+    console.log(arrayName,": ",newArr)
+}
+
+function oddFunc(a){
+    return a%2!=0 ? a:""
+}
+
+
+function evenFunc(a){
+    return a%2==0 ? a:""
+}
+separateEvenOdd(arr, oddFunc, "Odd Array Element")
+separateEvenOdd(arr, evenFunc, "Even Array Element")
+
+```
