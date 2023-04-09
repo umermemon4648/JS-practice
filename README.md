@@ -68,3 +68,115 @@ let intro = {
         this.city = "karachi";
       })();
       ```
+    ### What JSON and its common method in JavaScript
+JSON stands for JavaScript Object Notation,JSON data is written as name/value pairs, just like JavaScript object properties (in double quotes).
+
+   -> **JSON.stringify:**
+
+      It convert JavaScript objects into JSON format.
+
+      ```javascript
+      let person = {
+          name: "umer",
+        age: 22,
+        city: "karachi",
+      } 
+    let jsonString = JSON.stringify(person)
+      ```
+
+-> **JSON.parse:**
+      It convert JSON string into JavaScript objects.
+
+      ```javascript
+      let jsonString = JSON.parse('{"name":"umer","age":22,"city":"karachi"}')
+      ```
+  ### What is Promises explain with the help of examples
+Promises are used in asynchronous operations, where we need to wait for other task to get completed
+Promises have three state:
+
+pending: initial state
+fulfilled: successfully completed
+rejected: operation denied
+
+   -> **Promise example:**
+
+
+      ```javascript
+      // resolve
+   let promise =  new Promise(function(resolve, reject){
+    setTimeout(()=> resolve("Promise Resolved"), 5000)
+  })
+  promise.then((success)=>console.log(success))
+
+
+// rejected
+     let promise =  new Promise(function(resolve, reject){
+    setTimeout(()=> reject("Promise Rejected"), 5000)
+  })
+  promise.catch((error)=>console.log(error))
+      ```
+
+
+      
+   -> **Promise chaining:**
+
+
+      ```javascript
+      // resolve
+function getCart(){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const cart = {
+                items: ["Burger", "Pizza"],
+                totalPrize: 200
+            }
+            resolve(cart)
+        }, 3000);
+    })
+}
+function paymentProcess(cart){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(cart.totalPrize>0){
+                const paymentDetail = {
+                    cardNumber: "1234 5678 9012 3456",
+                    expiryDate: "12/24",
+                    cvv: "123"
+                }
+
+                resolve(paymentDetail)
+            }
+        }, 3000);
+    })
+}
+function placeOrder(paymentDetail){
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const orderDetail = {
+                items: ["Burger", "Pizza"],
+                totalPrize: 200,
+                paymentDetail: paymentDetail,
+                status: "Order Placed"
+            }
+            resolve(orderDetail)
+        }, 3000);
+    })
+}
+
+getCart().then((cart)=> {
+
+    console.log("Cart: ",cart)
+    return paymentProcess(cart)
+    
+})
+.then((paymentDetail)=>{
+ console.log("Payment Detail: ",paymentDetail)
+ return placeOrder(paymentDetail)
+})
+.then((orderDetail)=>{
+    console.log("Order Detail: ",orderDetail)
+})
+.catch((error)=>{
+    console.log("error: ", error)
+});;
+      ```
