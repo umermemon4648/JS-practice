@@ -195,7 +195,7 @@ In JavaScript, callbacks are functions that are passed as arguments to other fun
 
 ```javascript
 let arr = [1,2,3,4,5,6,7,8,9,10]
-function separateEvenOdd(arr, callBackFun, arrayName){
+function separatingEvenOdd(arr, callBackFun, arrayName){
     const newArr = []
     for (let i = 0; i < arr.length; i++) {
         if (callBackFun(arr[i]) =='') {
@@ -217,9 +217,79 @@ function oddFunc(a){
 function evenFunc(a){
     return a%2==0 ? a:""
 }
-separateEvenOdd(arr, oddFunc, "Odd Array Element")
-separateEvenOdd(arr, evenFunc, "Even Array Element")
+separatingEvenOdd(arr, oddFunc, "Odd Array Element")
+separatingEvenOdd(arr, evenFunc, "Even Array Element")
 
+```
+
+  -> **Asynchronous callback example:**
+   -> *Fetching game data after 4s*
+
+
+```javascript
+let gamelist = []
+let games = {}
+const fetchData = (displayData)=>{
+    setTimeout(() => {
+        gamelist.push(
+        {
+            name: "Gata V",
+            id: 1,
+        },
+
+        {
+            name: "call of duty modern warfare 2",
+            id: 1,
+        },
+        {
+            name: "Granny: Chapter Two",
+            id: 3,
+        },
+
+        )
+        displayData(gamelist)
+    }, 4000);
+}
+const displayData = (data) => {
+    console.log(data)
+}
+
+fetchData(displayData)
+```
+
+  ### OOP in JS
+In JavaScript, callbacks are functions that are passed as arguments to other functions and executed when the main function completes. Callbacks can be used to implement both synchronous and asynchronous code.
+
+
+      
+   -> **How to implement class constructor and methods within a class in JS:**
+
+
+```javascript
+class Person {
+    constructor(firstName, lastName, age, city, country){
+        this.firstName = firstName
+        this.lastName = lastName
+        this.age = age
+        this.city = city
+        this.country = country
+    }
+
+    getFullName() {
+        const fullName = `This getFullName methods returns Full name of a person as: ${this.firstName} ${this.lastName}`
+        return fullName
+      }
+
+    getFullAddress(){
+        const address = `${this.firstName} ${this.lastName} live in ${this.city}, ${this.country}`
+        return address
+    }
+}
+
+const personObj = new Person("Muhammad", "Umer", 21, "Karachi", "Pakistan")
+
+console.log(personObj.getFullName())
+console.log(personObj.getFullAddress())
 ```
 
   -> **Asynchronous callback example:**
