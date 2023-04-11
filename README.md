@@ -292,37 +292,52 @@ console.log(personObj.getFullName())
 console.log(personObj.getFullAddress())
 ```
 
-  -> **Asynchronous callback example:**
-   -> *Fetching game data after 4s*
+  -> **ncapsulation in JavaScript using both private properties and getter/setter methods::**
 
 
 ```javascript
-let gamelist = []
-let games = {}
-const fetchData = (displayData)=>{
-    setTimeout(() => {
-        gamelist.push(
-        {
-            name: "Gata V",
-            id: 1,
-        },
+class BankAccountDetails{
+    constructor(accountNo, balance, accountHolder){
+        this._accountNo = accountNo
+        this._balance = balance
+        this._accountHolder = accountHolder
+    }
+    get account_no(){
+        return this._accountNo
+    }
 
-        {
-            name: "call of duty modern warfare 2",
-            id: 1,
-        },
-        {
-            name: "Granny: Chapter Two",
-            id: 3,
-        },
+    get balance(){
+        return this._balance
+    }
+    get account_holder(){
+        return this._accountHolder
+    }
 
-        )
-        displayData(gamelist)
-    }, 4000);
+    set balance(amount){
+        if (amount<0) {
+            throw new Error("Balance can not be negative")
+        }
+        this._balance = amount
+    }
+
+    deposit(amount){
+        this._balance += amount 
+    }
+
+    withdraw(amount){
+        if (this._balance < amount) {
+            throw new Error("Insufient Balance")
+        }
+        this._balance -= amount 
+    }
+
+
 }
-const displayData = (data) => {
-    console.log(data)
-}
 
-fetchData(displayData)
+// Example usage:
+const account = new BankAccountDetails('123456789', 10000, 'Muhammad Umer');
+account.deposit(5000);
+console.log("Balance after deposit: ", account.balance); // Output: 15000
+account.withdraw(3000);
+console.log("Balance after withdrawal: ",account.balance); // Output: 12000
 ```
