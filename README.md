@@ -180,7 +180,7 @@ getCart().then((cart)=> {
 })
 .catch((error)=>{
     console.log("error: ", error)
-});;
+})
 ```
 
 
@@ -414,3 +414,58 @@ class Rectangle extends Shape{
 const shapes = [new Circle(5), new Rectangle(10, 20)];
 shapes.forEach(shape => console.log(shape.area()));
 ```
+
+  ### What is Spread Operator
+The spread operator (...) is used to spread the elements of an array or object into another array or object. It can be used in a variety of ways, such as:
+
+
+      
+   -> **Different ways to use Spread Operator(...) in JS :**
+   -> *Concatenating arrays::*
+
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combined = [...arr1, ...arr2]; // [1, 2, 3, 4, 5, 6]
+
+```
+
+   -> *Copying arrays:::*
+
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1]; // [1, 2, 3]
+
+
+```
+
+   -> *Creating new arrays:::*
+
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 4, 5, 6]; // [1, 2, 3, 4, 5, 6]
+
+```
+
+
+  ### What is rest Operator
+The rest operator (...) is used to represent an indefinite number of arguments in function arguments that allow to accept a variable number of arguments. 
+      
+   -> **Implementation of rest Operator(...) in JS :**
+
+```javascript
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+sum(1, 2, 3, 4); // 10
+sum(1, 2, 3); // 6
+sum(1, 2); // 3
+sum(1); // 1
+sum(); // 0
+
+```
+
