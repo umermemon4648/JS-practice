@@ -292,7 +292,7 @@ console.log(personObj.getFullName())
 console.log(personObj.getFullAddress())
 ```
 
-  -> **ncapsulation in JavaScript using both private properties and getter/setter methods::**
+  -> **Encapsulation in JavaScript using both private properties and getter/setter methods::**
 
 
 ```javascript
@@ -340,4 +340,77 @@ account.deposit(5000);
 console.log("Balance after deposit: ", account.balance); // Output: 15000
 account.withdraw(3000);
 console.log("Balance after withdrawal: ",account.balance); // Output: 12000
+```
+
+  -> **Implementation of inheritance in JavaScript with static methods, method overloading, and method overriding::**
+
+
+```javascript
+class Animal{
+    constructor(name){
+        this.name = name
+    }
+
+    static breath(){
+        console.log("All Animals breath")
+    }
+
+    makeSound(){
+        console.log(`${this.name} makes a generic sound.`);
+    }
+}
+
+class Dog extends Animal{
+    constructor(name){
+        super(name)
+    }
+      // Method overriding
+  makeSound() {
+    console.log(`${this.name} barks.`);
+  }
+    // Static method
+    static wagTail() {
+        console.log("Dogs wag their tails.");
+      }
+}
+
+const dogObj = new Dog("Hunter")
+dogObj.makeSound()
+Dog.breath()
+Dog.wagTail()
+```
+
+
+  -> **Implementation of Polmorphism in JavaScript::**
+
+
+```javascript
+class Shape{
+    area(){
+
+    }
+}
+class Circle extends Shape{
+    constructor(radius){
+        super()
+        this.radius =radius
+    }
+
+    area(){
+       return `The area of Circle: ${Math.PI*this.radius*this.radius}`
+    }
+}
+class Rectangle extends Shape{
+    constructor(width, height){
+        super()
+        this.width = width
+        this.height = height
+    }
+    area(){
+        return `The area of Rectangle: ${this.width*this.height}`
+    }
+}
+
+const shapes = [new Circle(5), new Rectangle(10, 20)];
+shapes.forEach(shape => console.log(shape.area()));
 ```
