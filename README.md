@@ -539,6 +539,14 @@ const { name:fullName, age: yearsOld } = person;
 console.log(fullName); // 'Muhammad Umer'
 console.log(yearsOld); // 21
 
+// Object destructuring with nested properties
+const person = { name: 'Muhammad Umer', address: { city: 'Karachi', province: 'Sindh' } };
+const { name, address: { city, province } } = person;
+
+console.log(name); // 'Muhammad Umer'
+console.log(city); // 'Karachi'
+console.log(province); // 'Sindh'
+
 
 
 ```
