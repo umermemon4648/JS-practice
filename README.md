@@ -486,4 +486,11 @@ console.log(c); // 'orange'
 console.log(d); // 'Pomegranate'
 console.log(e); // 'peach'
 
+// Skipping values
+const fruitsArray = ['apple', 'banana', 'orange'];
+
+const [a, , c] = fruitsArray;
+
+console.log(a); // 'apple'
+console.log(c); // 'orange'
 ```
