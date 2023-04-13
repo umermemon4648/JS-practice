@@ -493,4 +493,13 @@ const [a, , c] = fruitsArray;
 
 console.log(a); // 'apple'
 console.log(c); // 'orange'
+
+
+// Setting Default Values
+const fruitsArray = ['apple'];
+const [a, b = 'banana'] = fruitsArray;
+
+console.log(a); // 'apple'
+console.log(b); // 'banana'
+
 ```
