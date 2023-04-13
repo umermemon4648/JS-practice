@@ -547,6 +547,20 @@ console.log(name); // 'Muhammad Umer'
 console.log(city); // 'Karachi'
 console.log(province); // 'Sindh'
 
+// Object destructuring with a rest parameter
+const student = {
+  name: "Umer",
+  rollno: 16,
+  skills: {
+    web: "HTML, CSS, JS, ReactJS",
+    mobileDev: "React Native, Dart, Flutter",
+  }
+}
+const {name, rollno, ...mySpreadOp} = student
+console.log(name)
+console.log(rollno)
+console.log(mySpreadOp)
+
 
 
 ```
