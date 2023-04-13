@@ -502,4 +502,10 @@ const [a, b = 'banana'] = fruitsArray;
 console.log(a); // 'apple'
 console.log(b); // 'banana'
 
+// Rest Syntax 
+const fruitsArray = ['apple', 'banana', 'orange'];
+const [a, ...rest] = fruitsArray;
+console.log(a); // 'apple'
+console.log(rest); // ['banana', 'orange']
+
 ```
