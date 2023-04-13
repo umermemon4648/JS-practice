@@ -509,3 +509,21 @@ console.log(a); // 'apple'
 console.log(rest); // ['banana', 'orange']
 
 ```
+
+
+  ### What is Object destructuring
+ In object Destructuring, you can extract properties and assign them to variables with the same name as the property in an elegant way
+      
+   -> **Implementation of Object destructuring in JS with some examples:**
+
+```javascript
+
+//Basic object destructuring 
+const person = { name: 'Muhammad Umer', age: 21 };
+const { name, age } = person;
+
+console.log(name); // 'Muhammad Umer'
+console.log(age); // 21
+
+
+```
