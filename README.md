@@ -526,4 +526,19 @@ console.log(name); // 'Muhammad Umer'
 console.log(age); // 21
 
 
+//Without object destructuring 
+const person = { name: 'Muhammad Umer', age: 21 };
+
+console.log(person.name); // 'Muhammad Umer'
+console.log(person.age); // 21
+
+// Object destructuring with new variable names
+const person = { name: 'Muhammad Umer', age: 21 };
+const { name:fullName, age: yearsOld } = person;
+
+console.log(fullName); // 'Muhammad Umer'
+console.log(yearsOld); // 21
+
+
+
 ```
