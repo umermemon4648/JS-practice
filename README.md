@@ -469,3 +469,21 @@ sum(); // 0
 
 ```
 
+
+  ### What is Array destructuring
+An array destructuring allows you to assign values from an array to variables in a more concise and elegant way
+      
+   -> **Implementation of Array destructuring in JS with some examples:**
+
+```javascript
+const fruitsArray = ['apple', 'banana', 'orange', 'Pomegranate', 'peach'];
+
+const [a, b, c, d, e] = fruitsArray;
+
+console.log(a); // 'apple'
+console.log(b); // 'banana'
+console.log(c); // 'orange'
+console.log(d); // 'Pomegranate'
+console.log(e); // 'peach'
+
+```
