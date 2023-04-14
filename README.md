@@ -583,8 +583,24 @@ setInterval(function() {
   sum = add(sum, 1);
   console.log("Sum: ", sum);
 }, 1000);
+```
 
+   -> **Implementation of Timeout function within single example:**
 
+```javascript
+
+setTimeout(() => {
+  console.log('Delayed message');
+}, 2000);
+let counter = 0
+let intervalId = setInterval(() => {
+  console.log('Interval message');
+  counter++;
+  if (counter === 8) {
+    clearInterval(intervalId);
+  }
+}, 1000);
 
 
 ```
+
