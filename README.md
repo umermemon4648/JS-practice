@@ -564,3 +564,27 @@ console.log(mySpreadOp)
 
 
 ```
+
+
+ ### What is setTimeout, setInterval, clearInterval
+ In object Destructuring, you can extract properties and assign them to variables with the same name as the property in an elegant way
+      
+   -> **Implementation of setTimeout in JS with example:**
+   -> ***The setInterval() function is commonly used to set a delay for functions that are executed again and again, :***
+
+```javascript
+
+function add(a,b) {
+  return a + b;
+}
+
+let sum = 0;
+setInterval(function() {
+  sum = add(sum, 1);
+  console.log("Sum: ", sum);
+}, 1000);
+
+
+
+
+```
