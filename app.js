@@ -26,3 +26,16 @@ class Rectangle extends Shape{
 
 const shapes = [new Circle(5), new Rectangle(10, 20)];
 shapes.forEach(shape => console.log(shape.area()));
+
+
+function demo(){
+    let greeting = "Hello! Fellow Developer"
+
+    return function(){
+        return greeting
+    }
+}
+
+// let myFunc = demo()
+// console.log(myFunc()) //without curring
+console.log(demo()()) //using curring

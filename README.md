@@ -257,6 +257,28 @@ const displayData = (data) => {
 fetchData(displayData)
 ```
 
+ ### What is curring in JS 
+ In object Destructuring, you can extract properties and assign them to variables with the same name as the property in an elegant way
+      
+   -> **Implementing curring in JS with the help of callback:**
+
+
+```javascript
+
+function demo(){
+    let greeting = "Hello! Fellow Developer"
+
+    return function(){
+        return greeting
+    }
+}
+
+// let myFunc = demo()
+// console.log(myFunc()) //without curring
+console.log(demo()()) //using curring
+```
+
+
   ### OOP in JS
 In JavaScript, callbacks are functions that are passed as arguments to other functions and executed when the main function completes. Callbacks can be used to implement both synchronous and asynchronous code.
 
