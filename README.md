@@ -258,7 +258,7 @@ fetchData(displayData)
 ```
 
  ### What is curring in JS 
- In object Destructuring, you can extract properties and assign them to variables with the same name as the property in an elegant way
+urrying in JavaScript is a process that allows you to transform a function with multiple arguments into a sequence of nesting functions
       
    -> **Implementing curring in JS with the help of callback:**
 
@@ -623,6 +623,27 @@ let intervalId = setInterval(() => {
   }
 }, 1000);
 
+
+```
+
+
+
+      
+   -> **closure example:**
+
+
+```javascript
+function add(a,b){
+    let c = a+b
+    console.log("c: ",c)
+    return function(d){
+        return `The sum of Three numbers: ${c+d}`
+    }
+}
+
+let myFunc = add(2,3)
+let closureFunc = myFunc(16)
+console.log(closureFunc)
 
 ```
 
