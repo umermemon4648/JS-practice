@@ -647,3 +647,28 @@ console.log(closureFunc)
 
 ```
 
+
+### What is optional chaining in JS
+ In JavaScript, you can chain multiple optional chaining operators (?.) to safely access nested properties of an object that may be null or undefined.
+      
+   -> **Implementating  multiple optional chaining operators to access deeply nested properties::**
+  
+```javascript
+const person = {
+  name: 'Umer',
+  age: 21,
+  address: {
+    street: '123 Main St',
+    city: 'Karachi',
+    province: 'Sindh',
+    country: {
+      name: 'Pakistan',
+      code: 'PK'
+    }
+  }
+};
+
+const countryCode = person.address?.country?.code; // 'US'
+const postalCode = person.address?.postalCode?.value; // undefined
+
+```
