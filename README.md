@@ -668,7 +668,7 @@ const person = {
   }
 };
 
-const countryCode = person.address?.country?.code; // 'US'
+const countryCode = person.address?.country?.code; // 'PK'
 const postalCode = person.address?.postalCode?.value; // undefined
 
 ```
