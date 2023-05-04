@@ -258,7 +258,7 @@ fetchData(displayData)
 ```
 
  ### What is curring in JS 
-urrying in JavaScript is a process that allows you to transform a function with multiple arguments into a sequence of nesting functions
+currying in JavaScript is a process that allows you to transform a function with multiple arguments into a sequence of nesting functions
       
    -> **Implementing curring in JS with the help of callback:**
 
